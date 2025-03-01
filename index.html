@@ -4,12 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="./css/style.css">
     <title>Site Calculo</title>
 </head>
 <body>
     
-    
+    <div>
+        <div>
+            <div>
+                <label for="">Nome do Produto: </label>
+                <input type="text" class="form-control" id="nmProduto">
+
+                <label for="">Preço do Produto: </label>
+                <input type="number" class="form-control" id="precoProd">
+
+                <label for="">Imposto</label>
+                <input type="number" class="form-control" id="imp">
+
+                <button class="btn btn-primary mt-3" id="calc">Calcular</button>
+
+                <h1>Nome: <span id="nome"> </span></h1>
+                <h2>Preço do Produto: <span id="preco"> </span></h2>
+                <h2>Impostos: <span id="imposto"> </span></h2>
+                <h2>Resultado: <span id="res"></span></h2>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="./js/produto.js"></script>
+    <script src="./js/main.js"></script>
 
 </body>
 </html>
