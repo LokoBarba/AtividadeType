@@ -1,7 +1,9 @@
 {
   "dependencies": {
     "bootstrap": "^5.3.3",
-    "live-server": "^1.2.2"
+    "live-server": "^1.2.2",
+    "node-modules": "^1.0.1",
+    "typescript": "^5.8.2"
   },
   "name": "atividadetype",
   "version": "1.0.0",

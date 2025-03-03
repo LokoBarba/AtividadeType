@@ -2,6 +2,10 @@
 var loja;
 (function (loja) {
     class Produto {
+        constructor(produto, preco) {
+            this._produto = produto;
+            this._preco = preco;
+        }
         get produto() {
             return this._produto;
         }
@@ -14,14 +18,8 @@ var loja;
         set preco(preco) {
             this._preco = preco;
         }
-        get imposto() {
-            return this._imposto;
-        }
-        set imposto(imposto) {
-            this._imposto = imposto;
-        }
-        calcularPrecoFinal(imp1) {
-            return imp1 / this._preco;
+        calcularPrecoFinal(imposto) {
+            return this._preco + (this._preco * imposto / 100);
         }
     }
     loja.Produto = Produto;

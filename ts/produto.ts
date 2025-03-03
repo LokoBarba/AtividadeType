@@ -3,7 +3,11 @@ namespace loja{
 
         private _produto:string;
         private _preco:number;
-        private _imposto:number;
+        
+        constructor(produto: string, preco: number) {
+            this._produto = produto;
+            this._preco = preco;
+        }
 
         get produto(){
             return this._produto;
@@ -20,18 +24,9 @@ namespace loja{
         set preco(preco:number){
             this._preco=preco;
         }
-
-        get imposto(){
-            return this._imposto;
-        }
-
-        set imposto(imposto:number){
-            this._imposto=imposto;
-        }
         
-
-        public calcularPrecoFinal(imp1:number):number{
-            return imp1 / this._preco;
+        public calcularPrecoFinal(imposto: number): number {
+            return this._preco + (this._preco * imposto / 100);
         }
 
     }
