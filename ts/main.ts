@@ -6,40 +6,42 @@ namespace loja{
     const precoProd = document.getElementById("precoProd") as HTMLInputElement;
     const imp = document.getElementById("imp") as HTMLInputElement;
     const calc = document.getElementById("calc") as HTMLButtonElement;
-    const res = document.getElementById("res") as HTMLSpanElement;
-    const produto = document.getElementById("produto") as HTMLSpanElement;
-    const preco = document.getElementById("preco") as HTMLSpanElement;
-    const imposto = document.getElementById("imposto") as HTMLSpanElement;
+    const res = document.getElementById("res") as HTMLTextAreaElement;
+    const produto = document.getElementById("produto") as HTMLTextAreaElement;
+    const preco = document.getElementById("preco") as HTMLTextAreaElement;
+    const imposto = document.getElementById("imposto") as HTMLTextAreaElement;
     
     //inicia produto e preço com valores padrões
     produto.textContent = p.produto;
     preco.textContent = p.preco.toFixed(2);
+    imposto.textContent = imp.value;
     
-    //alteração do nome do produto
-    nmProduto.addEventListener("input", () =>{
-        p.produto = nmProduto.value;
-        produto.textContent = p.produto
-    })
-
     calc.addEventListener("click", () => {
-        const imposto = parseFloat(imp.value);
+        const calcula = parseFloat(imp.value);
         // valida se os campos estão preenchidos corretamente
         if (nmProduto.value && precoProd.value && imp.value) {
             p.produto = nmProduto.value;
             p.preco = parseFloat(precoProd.value);
-            // Calculando o preço final com o imposto
-            const precoFinal = p.calcularPrecoFinal(imposto);
+
+            //calcula o preço final com o imposto
+            const precoFinal = p.calcularPrecoFinal(calcula);
 
             //atualizando os valores
-            produto.textContent = p.produto;
-            preco.textContent = p.preco.toFixed(2);
-            imp.textContent = `${imposto}%`;
+            produto.textContent = `Nome do produto: ${p.produto}`;
+            preco.textContent = `Preço do produto: R$${p.preco.toFixed(2)}`;
+            //imposto.textContent = `Valor do imposto: R$${imp.value}`;
             res.textContent = `Preço final com imposto: R$${precoFinal.toFixed(2)}`;
 
         } else {
             alert("Preencha corretamente!");
         }
-    
     });
-
+    /*alteração do nome do produto
+    nmProduto.addEventListener('change', () =>{
+        nmProduto.value = p.produto
+        nmProduto.oninput = () =>{
+        produto.value = nmProduto.value;
+        produto.value = `Nome do produto: ${p.produto}`;
+    };
+    });*/    
 }

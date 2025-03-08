@@ -12,23 +12,36 @@
     
     <div class="container mt-4">
         <div class="row">
-            <div class="col-12">
+            <div class="col-6">
 
                 <label for="nmProduto">Nome do Produto: </label>
                 <input type="text" class="form-control" id="nmProduto">
-                
+            </div>
+            <div class="col-6"> 
                 <label for="precoProd">Preço do Produto: </label>
                 <input type="number" class="form-control" id="precoProd">
-                
-                <label for="imp">Imposto %: </label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6">
+                <label for="imp">Imposto %:</label>
                 <input type="number" class="form-control" id="imp" placeholder="Imposto (%)">
-
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 d-grid gap-2">
                 <button class="btn btn-primary mt-3" id="calc">Calcular</button>
+            </div>
+        </div>        
+                
+                
 
-                <h3>Nome do produto: <span id="produto"> </span></h3>
-                <h3>Preço do Produto: <span id="preco"> </span></h3>
-                <h3>Impostos: <span id="imposto"> </span></h3>
-                <h3>Resultado: <span id="res"></span></h3>
+                
+
+                <h3 id="produto"> </h3>
+                <h3 id="preco"> </h3>
+                <h3 id="imposto"> </h3>
+                <h3 id="res"> </h3>
 
             </div>
         </div>

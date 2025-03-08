@@ -4,15 +4,14 @@
     width: 50%;
     
 }
+.container span{
+    margin: 5px 5px 5px 5px;
+}
 .container button{
-    display: flex;
     align-items: center;
     background-color: antiquewhite;
     color: #333;
     border-color: black;
-    margin-left: 42%;
-    margin-top: 10px;
-    margin-bottom: 10px;
 }
 .container button:hover{
     color: aquamarine;
@@ -20,7 +19,14 @@
     border-color: black;
 }
 .container h3{
+    display: block;
     font-family: fantasy;
     color: #333;
     text-align: justify;
+    margin-top: 30px;
+}
+#mainP{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 5px 5px 5px 5px;
 }
